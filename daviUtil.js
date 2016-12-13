@@ -29,6 +29,17 @@ var dvUtil = (function($) {
 					    }
 					    return false;
 					},
+
+					array_unic: function(arr) {
+			            var index;
+			            for (var i = 0; i < arr.length; i += 1) {
+			                while ((index = arr.indexOf(arr[i], i + 1)) != -1) {
+			                    arr.splice(index, 1);
+			                }
+			            }
+
+			            return arr;
+			        },
 				};
 
 	var dom = {
@@ -74,8 +85,11 @@ var dvUtil = (function($) {
 				};
 
 	return {
+		// ARRAY
 		inArray: array.inArray,
 		arrayCompare: array.arrayCompare,
+		array_unic:array_unic,
+		// DOM
 		tag_a: dom.tag_a,
 		tag_p: dom.tag_p,
 		tag_i: dom.tag_i,
