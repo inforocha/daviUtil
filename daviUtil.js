@@ -81,6 +81,22 @@ var dvUtil = (function($) {
 							element.appendChild(obj.apendElement);
 						}
 						return element;
+					},
+					/**
+					* gera um link que az o download do arquivo na mesma pagina e depois exclui o elemento
+					*/
+					createDownload: function(path) {
+						var url  = window.location.href; 
+						var absolute = url.split("/");
+						absolute = absolute[0]+'//'+absolute[2]+'/'+absolute[3];
+				        var path = absolute+path;
+
+				        var link = document.createElement('a');
+						link.href = path;
+						link.download = '';
+						document.body.appendChild(link);
+						link.click();
+						link.remove;
 					}
 				};
 
@@ -95,5 +111,6 @@ var dvUtil = (function($) {
 		tag_i: dom.tag_i,
 		tag_ul: dom.tag_ul,
 		tag_li: dom.tag_li,
+		createDownload: dom.createDownload
 	}
 })(jQuery)
