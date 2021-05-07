@@ -1,5 +1,7 @@
 /*
  * daviUtil 1.1 - modulo com algumas funcoes auxiliares.
+ * 
+ * ESTE REPOSITORIO SERA EXCLUIDO EM BREVE. FAVOR OLHAR O REPO JS_HELPERS
  *
  * https://github.com/inforocha
  *
@@ -30,6 +32,7 @@ var dvUtil = (function($) {
 					    return false;
 					},
 
+					// @deprecated - ver a funcao array_unique do arquivo array_helper.js do repo js_helpers
 					array_unic: function(arr) {
 			            var index;
 			            for (var i = 0; i < arr.length; i += 1) {
